@@ -76,7 +76,7 @@ html {
   .hero {
     width: 100%;
     height: 100vh;
-    background: url('backgroundberanda/Background.png') center top no-repeat;
+    background: url('Background.png') center top no-repeat;
     background-size: cover;
     display: flex;
     align-items: center;
