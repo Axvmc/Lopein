@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lokal Peduli Indonesia</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  
+<header>
+  <div class="container nav">
+    <div class="logo">
+      <img src="pelengkapweb/LopeinLogo.png" alt="Logo LOPEIN">
+      <span>Lokal Peduli Indonesia</span>
+    </div>
+    <nav>
+      <a href="#beranda">Beranda</a>
+      <a href="#tentang-kami">Tentang Kami</a>
+      <a href="#produk">Produk</a>
+      <a href="#kontribusi">Kontribusi</a>
+      <a href="#kontak">Kontak</a>
+      
+      <!-- KERANJANG - DIPINDAH KE SINI, DI SAMPING KONTAK -->
+      <div class="cart-container">
+        <button class="cart-btn" onclick="toggleCart()" title="Keranjang Belanja">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- DROPDOWN KERANJANG -->
+  <div class="cart-dropdown" id="cartDropdown">
+    <div class="cart-header">
+      <h3>Keranjang Belanja</h3>
+      <button class="close-cart" onclick="toggleCart()">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p>Keranjang kosong</p>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <strong>Total: <span id="cartTotal">Rp 0</span></strong>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="beranda">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1>SELAMAT DATANG DI LOPEIN</h1>
+      <h2>Lokal Peduli Indonesia</h2>
+      <p>Kolaborasi Digital untuk Kemajuan UMKM</p>
+      <button onclick="window.location.href='#tentang-kami'">Tentang Kami</button>
+    </div>
+  </section>
+
+  <!-- Tentang Kami Section -->
+  <div class="main-container" id="tentang-kami">
+    <div class="content-wrapper">
+      <div class="text-section">
+        <h1 class="title">Bersama UMKM Lokal, Tumbuh di Era Digital</h1>
+        <p>Lokal Peduli Lindungi adalah gerakan relawan digital yang berfokus pada pemberdayaan UMKM melalui solusi kreatif dan pemanfaatan teknologi. <br> Kami hadir untuk membantu UMKM beradaptasi, berkembang, dan mampu bersaing di era digital tanpa kehilangan jati diri lokal.</p>
+        <p>Kami menyediakan layanan desain grafis, konten digital, Pembuatan Website dan editing yang profesional <br> serta mudah diakses oleh UMKM. Melalui pendampingan dan kolaborasi, kami mendorong transformasi UMKM dari usaha konvensional menuju bisnis yang siap digital dan berkelanjutan.</p>
+        <p>Selain mendampingi UMKM, Lokal Peduli Lindungi juga menjadi ruang kolaborasi bagi relawan kreatif untuk berbagi keahlian, pengalaman, dan kepedulian sosial. Kami percaya bahwa kolaborasi, edukasi, dan praktik langsung adalah kunci untuk meningkatkan literasi digital serta membangun ekosistem UMKM dan relawan yang saling menguatkan.</p>
+      </div>
+
+      <div class="icon-grid">
+        <div class="icon-card">
+          <img src="pelengkapweb/Design1.png" alt="Desain">
+          <span>Desain grafis & kreatif</span>
+        </div>
+        <div class="icon-card">
+          <img src="pelengkapweb/Design2.png" alt="Editing">
+          <span>Editing konten</span>
+        </div>
+        <div class="icon-card">
+          <img src="pelengkapweb/Design3.png" alt="Goals">
+          <span>Goals</span>
+        </div>
+        <div class="icon-card">
+          <img src="pelengkapweb/Design4.png" alt="Organizations">
+          <span>Organizations</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team Section (ID diubah jadi 'team' karena 'kontribusi' sudah dipakai) -->
+    <div class="team-section" id="team">
+      <h2>Team Lokal Peduli Indonesia</h2>
+      <div class="volunteer-grid">
+        <div class="kontribusi-card">
+          <div class="kontribusi-icon">
+            <img src="relawan/Rachel-Profile.png" alt="Pendampingan" onerror="this.src='https://via.placeholder.com/80x80?text=Mentoring'">
+          </div>
+          <h3 class="kontribusi-card-title">Rachel</h3>
+          <h4>Marketing <br> Coordinator</h4>
+        </div>
+
+        <div class="kontribusi-card">
+          <div class="kontribusi-icon">
+            <img src="relawan/enhanced-image.png" alt="Pendampingan" onerror="this.src='https://via.placeholder.com/80x80?text=Mentoring'">
+          </div>
+          <h3 class="kontribusi-card-title">Aksel</h3>
+          <h4>Head Of <br> Technology</h4>
+        </div>
+
+        <div class="kontribusi-card">
+          <div class="kontribusi-icon">
+            <img src="relawan/Laila-Profile.png" alt="Pendampingan" onerror="this.src='https://via.placeholder.com/80x80?text=Mentoring'">
+          </div>
+          <h3 class="kontribusi-card-title">Laila</h3>
+          <h4>Managing <br> Director</h4>
+        </div>
+
+        <div class="kontribusi-card">
+          <div class="kontribusi-icon">
+            <img src="relawan/Masbil-Profile.png" alt="Pendampingan" onerror="this.src='https://via.placeholder.com/80x80?text=Mentoring'">
+          </div>
+          <h3 class="kontribusi-card-title">abil bil hadiid</h3>
+          <h4>Founder <br> Lokal Peduli <br> Indonesia</h4>
+        </div>
+
+        <div class="kontribusi-card">
+          <div class="kontribusi-icon">
+            <img src="relawan/Fachrur-profile.png" alt="Pendampingan" onerror="this.src='https://via.placeholder.com/80x80?text=Mentoring'">
+          </div>
+          <h3 class="kontribusi-card-title">Fachrur</h3>
+          <h4>Head Of <br> Marketing</h4>
+        </div>
+
+        <div class="kontribusi-card">
+          <div class="kontribusi-icon">
+            <img src="relawan/Kamrul-profile.png" alt="Pendampingan" onerror="this.src='https://via.placeholder.com/80x80?text=Mentoring'">
+          </div>
+          <h3 class="kontribusi-card-title">Syahrul</h3>
+          <h4>Head Of <br> Operations</h4>
+        </div>
+      </div>
+    </div>
+
+  <!-- PRODUK DENGAN KERANJANG ✅ -->
+  <div id="produk"></div>
+  <div class="teks-sahabat">
+    <h3 class="title3">Produk Sahabat UMKM</h3>
+  </div>
+  <div class="product-container">
+    <div class="product-card">
+      <h4>Paket UMKM Basic Feed</h4>
+      <p class="product-desc">Cocok Untuk UMKM Basic Promosi</p>
+      <ul class="product-features">
+        <li>1 Design Poster Instagram untuk promosi</li>
+        <li>5 Feed Instagram untuk promosi</li>
+      </ul>
+      <p class="product-price">Rp35.000</p>
+      <button class="product-btn" onclick="addToCart('Paket UMKM Basic Feed', 35000, this)">🛒 Pesan</button>
+    </div>
+
+    <div class="product-card">
+      <h4>Paket UMKM Advanced Feed</h4>
+      <p class="product-desc">Cocok Untuk UMKM Advanced Promosi</p>
+      <ul class="product-features">
+        <li>Desain logo profesional</li>
+        <li>9 feed Instagram + 3 story</li>
+        <li>1 video konten (15–30 detik)</li>
+        <li>2 Desain Poster promosi</li>
+      </ul>
+      <p class="product-price">Rp225.000</p>
+      <button class="product-btn" onclick="addToCart('Paket UMKM Advanced Feed', 225000, this)">🛒 Pesan</button>
+    </div>
+
+    <div class="product-card">
+      <h4>Paket Basic Website</h4>
+      <p class="product-desc">Cocok Untuk UMKM yang mencari website</p>
+      <ul class="product-features">
+        <li>1 Halaman Website Dengan Tampilan Profesional (fitur terbatas)</li>
+        <li>Domain + Hosting</li>
+      </ul>
+      <p class="product-price">Rp290.000</p>
+      <button class="product-btn" onclick="addToCart('Paket Basic Website', 290000, this)">🛒 Pesan</button>
+    </div>
+
+    <div class="product-card">
+      <h4>Paket Website Advance</h4>
+      <p class="product-desc">Paket Website Advanced</p>
+      <ul class="product-features">
+        <li>2 Halaman Website Profesional + Fitur Custom</li>
+        <li>Domain + Hosting</li>
+      </ul>
+      <p class="product-price">Rp370.000</p>
+      <button class="product-btn" onclick="addToCart('Paket Website Advance', 370000, this)">🛒 Pesan</button>
+    </div>
+  </div>
+</div>
+
+  <!-- Design Poster By Lokal Peduli Indonesia untuk Sahabat UMKM -->
+  <div class="kontribusi-container" id="kontribusi">
+    <div class="kontribusi-header">
+      <h2 class="kontribusi-title">Design Poster By <span style="color:#f8d02f;">Lokal Peduli Indonesia</h2></span>
+    </div>
+    
+    <div class="kontribusi-grid">
+      <div class="kontribusi-card frame-only">
+        <div class="frame-image">
+          <img src="poster/1.png" alt="Gambar 1">
+        </div>
+      </div>
+      <div class="kontribusi-card frame-only">
+        <div class="frame-image">
+          <img src="poster/2.png" alt="Gambar 2">
+        </div>
+      </div>
+      <div class="kontribusi-card frame-only">
+        <div class="frame-image">
+          <img src="poster/3.png" alt="Gambar 3">
+        </div>
+      </div>
+      <div class="kontribusi-card frame-only">
+        <div class="frame-image">
+          <img src="poster/4.png" alt="Gambar 4">
+        </div>
+      </div>
+      <div class="kontribusi-card frame-only">
+        <div class="frame-image">
+          <img src="poster/5.png" alt="Gambar 5">
+        </div>
+      </div>
+      <div class="kontribusi-card frame-only">
+        <div class="frame-image">
+          <img src="poster/6.png" alt="Gambar 6">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA + FOOTER JADI SATU -->
+  <div class="cta-footer-wrapper">
+    <div class="cta-content">
+      <h3>GABUNG SEKARANG BERSAMA LOKAL PEDULI INDONESIA</h3>
+      <p>Kolaborasi Digital untuk Kemajuan UMKM</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSe5ET8Fu4ckq8rOlPUPNi_A0U-BZ-RQOf23gNaaT2F9zM2Q7Q/viewform?usp=dialog" target="_blank">
+      <button class="cta-btn">DAFTAR RELAWAN</button>
+      </a>
+    </div>
+    <footer class="footer" id="kontak">
+      <div class="footer-container">
+        <p class="footer-text">©2026 | Lokal Peduli Indonesia</p>
+        <div class="icon-container">
+          <a href="mailto:lopeindonesia64@gmail.com?" target="_blank" rel="noopener noreferrer">
+            <img src="logo/gmail.png" alt="Gmail Logo" width="20" height="20" style="width:35px; height:auto;">
+          <a href="https://www.instagram.com/lokalpeduliindonesia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+            <img src="logo/instagram.png" alt="Instagram Logo" width="20" height="20">
+          </a>
+          <a href="https://www.threads.com/@lokalpeduliindonesia" target="_blank" rel="noopener noreferrer">
+            <img src="logo/threads.png" alt="Threads Logo" width="20" height="20">
+          <a href="https://www.tiktok.com/@lokalpeduliindonesia?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer">
+            <img src="logo/tiktok.png" alt="Tiktok Logo" width="20" height="20">
+
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
